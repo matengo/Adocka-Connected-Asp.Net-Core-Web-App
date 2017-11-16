@@ -34,7 +34,7 @@ namespace DemoWebb.Helpers
         {
             var bearer = await _cache.GetOrCreateAsync<string>("bearer", async cacheEntry =>
             {
-                cacheEntry.SlidingExpiration = TimeSpan.FromHours(6);
+                cacheEntry.SlidingExpiration = TimeSpan.FromMinutes(10);
 
                 var disco = await DiscoveryClient.GetAsync("https://identity.adocka.com");
                 var tokenClient = new TokenClient(disco.TokenEndpoint, _config.GetValue<string>("ClientId"), _config.GetValue<string>("ClientSecret"));

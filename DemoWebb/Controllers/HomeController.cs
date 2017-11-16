@@ -19,7 +19,7 @@ namespace DemoWebb.Controllers
         {
             _helper = helper;
         }
-        [ResponseCache(Duration = 120)]
+        [ResponseCache(Duration = 600)]
         public async Task<IActionResult> Index()
         {
             var client = await _helper.GetClient();
