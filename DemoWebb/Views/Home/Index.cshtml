@@ -1,0 +1,32 @@
+﻿@model List<DemoWebb.Models.Product>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+
+                <div style="height:200px; overflow: hidden;">
+                    <img src="@product.ImageUrl" alt="...">
+                </div>
+                
+                <div class="caption">
+                    <h3>@product.Name</h3>
+                    <p>@product.ShortDescription</p>
+                    <p>
+                        @product.CurrentSellingPriceInclVat kr
+                    </p>
+                    <p><a href="/product/get/@product.ProductId" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
